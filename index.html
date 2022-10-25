@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=block">
+    <link rel="stylesheet" href="./css/colors.css">
+    <title>Visioning on an Autumn’s Day</title>
+    <style>
+
+      /* reboot */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        :root {
+          scroll-behavior: smooth;
+        }
+      }
+
+      body {
+        margin: 0;
+        word-break: keep-all;
+      }
+
+      /* custom */
+      :root {
+        --desktop-to-mobile-multiplier: 1;
+        --mobile-to-desktop-multiplier: 9 / 8;
+        --wave-amplitude: 108px;
+      }
+      @media (max-width: 768px) {
+        :root {
+          --desktop-to-mobile-multiplier: 11 / 12;
+          --mobile-to-desktop-multiplier: 1;
+        }
+      }
+
+      html {
+        background-color: var(--color-gray-900);
+      }
+      body {
+        line-height: 1;
+        font-family: system-ui;
+        color: var(--color-gray-100);
+      }
+
+      .section--dark {
+        background-color: var(--color-gray-200);
+        color: var(--color-gray-800);
+      }
+      .section--darker {
+        background-color: var(--color-gray-100);
+        color: var(--color-gray-800);
+      }
+
+      .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+      }
+      .container__inner {
+        flex-grow: 1;
+        max-width: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .row--align-start {
+        text-align: start;
+        padding-right: 18px;
+        padding-left: 20px;
+      }
+      .row--align-center {
+        text-align: center;
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+      .row--timetable-dot {
+        margin-top: 7px;
+        margin-bottom: 7px;
+      }
+      .row--guestlist {
+        margin-top: calc(24px * var(--desktop-to-mobile-multiplier));
+        display: flex;
+        gap: calc(10px * var(--desktop-to-mobile-multiplier));
+      }
+
+      .text--display {
+        line-height: calc(42px * var(--desktop-to-mobile-multiplier));
+        font-size: calc(39px * var(--desktop-to-mobile-multiplier));
+        font-weight: 400;
+        font-family: 'Yeseva One', cursive;
+        letter-spacing: -0.024em;
+        color: var(--color-gray-800);
+      }
+      .text--display-sub {
+        line-height: calc(36px * var(--desktop-to-mobile-multiplier));
+        font-size: calc(33px * var(--desktop-to-mobile-multiplier));
+        color: var(--color-gray-700);
+      }
+      .text--headline-en {
+        line-height: calc(23px * var(--mobile-to-desktop-multiplier));
+        font-size: calc(17.125px * var(--mobile-to-desktop-multiplier));
+        font-weight: 450;
+        letter-spacing: -0.012em;
+      }
+      .text--headline-ko {
+        line-height: calc(24px * var(--mobile-to-desktop-multiplier));
+        font-size: calc(17px * var(--mobile-to-desktop-multiplier));
+        font-weight: 700;
+        letter-spacing: -0.018em;
+        opacity: 0.3;
+      }
+      .text--body {
+        line-height: calc(32px * var(--desktop-to-mobile-multiplier));
+        font-size: calc(19px * var(--desktop-to-mobile-multiplier));
+        font-weight: 350;
+        letter-spacing: -0.008em;
+      }
+      .text--caption {
+        line-height: 25px;
+        font-size: 15px;
+        font-weight: 350;
+        letter-spacing: -0.012em;
+        opacity: 0.4;
+      }
+      .text--timetable {
+        line-height: 32px;
+        font-size: 17px;
+        font-weight: 350;
+        letter-spacing: -0.012em;
+      }
+      .text--timetable-dot {
+        opacity: 0.3;
+      }
+      .text--guestlist {
+        line-height: calc(32px * var(--desktop-to-mobile-multiplier));
+        font-size: calc(22px * var(--desktop-to-mobile-multiplier));
+        font-weight: 700;
+        letter-spacing: -0.018em;
+        color: var(--color-gray-700);
+      }
+      .text--guestlist-sub {
+        font-size: calc(20px * var(--desktop-to-mobile-multiplier));
+        font-weight: 350;
+        color: var(--color-gray-400);
+      }
+      .text--guestlist-dimmed {
+        opacity: 0.3;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="splash" style="position: relative; z-index: -1;">
+        <div class="container">
+          <div class="container__inner" style="padding-top: var(--wave-amplitude); padding-bottom: calc(var(--wave-amplitude) + 30px);">
+            <div class="row row--align-start">
+              <span class="text text--headline-en">What is one important truth<br>very few people would agree with you on?</span>
+            </div>
+            <div class="row row--align-start" style="margin-top: calc(2px * var(--mobile-to-desktop-multiplier));">
+              <span class="text text--headline-ko">당신이 믿고 있는, 그중<wbr>에서도 아주 적은 사람이<br>동의할 만한 진실이 있나요?</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="position: relative; overflow: hidden; height: calc(var(--wave-amplitude) * 2); margin-top: calc(var(--wave-amplitude) * -1); margin-bottom: calc(var(--wave-amplitude) * -1);">
+        <div id="waveContainer" style="position: relative; left: -25%; top: 2.8px; width: 150%; height: 100%;"></div>
+      </section>
+      <section class="section section--dark">
+        <div class="container">
+          <div class="container__inner" style="padding-top: calc(var(--wave-amplitude) + 30px); padding-bottom: var(--wave-amplitude);">
+            <div class="row row--align-center">
+              <span class="text text--display">Visioning on an<br>Autumn’s Day</span>
+            </div>
+            <div class="row row--align-start" style="margin-top: calc(80px * var(--desktop-to-mobile-multiplier));">
+              <span class="text text--body">김찬우의 생일을 즈음하여 지인들과 소소한 컨퍼런스를 개최<wbr>합니다. 주제는 위의 Contrarian Question에 대한 네 발표자의 답변<wbr>입니다. 날짜는 <a href="./event.ics" style="font-size: 0.985em; font-weight: 550; color: var(--color-yellow-1000); text-decoration: none;">2022년 11월 6일, 일요일</a><wbr>이며 메인 일정은 오후 2:15부터 5:30까지 진행<wbr>합니다. 그러면, 바 <a target="_blank" href="https://map.naver.com/v5/entry/place/31107953" style="font-size: 0.985em; font-weight: 550; color: var(--color-yellow-1000); text-decoration: none;">테일 오브 테일스</a><wbr>에서 만날게요!</span>
+            </div>
+            <div class="row row--align-start" style="margin-top: calc(5px * var(--desktop-to-mobile-multiplier));">
+              <span class="text text--caption">*선물은 가져오지 말아 주세요! 대신, 현장에서 자유롭게 행사 운영 비용에 기여하실 수 있습니다.</span>
+            </div>
+            <div class="row row--align-center" style="margin-top: calc(95px * var(--desktop-to-mobile-multiplier));">
+              <img src="./images/venue.png" width="100%" style="max-width: 62.5vh;">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="darken" class="section section--darker">
+        <div class="container">
+          <div class="container__inner" style="padding: calc(60px * var(--desktop-to-mobile-multiplier)) 0;">
+            <div class="row row--align-center" style="margin-bottom: calc(60px * var(--desktop-to-mobile-multiplier));">
+              <span class="text text--display text--display-sub">Timetable</span>
+            </div>
+            <div class="row row--align-center">
+              <span class="text text--timetable">2:00<br>오픈</span>
+            </div>
+            <div class="row row--align-center row--timetable-dot">
+              <span class="text text--timetable text--timetable-dot">&middot;</span>
+            </div>
+            <div class="row row--align-center">
+              <span class="text text--timetable">2:30<br>정수영의 답변</span>
+            </div>
+            <div class="row row--align-center row--timetable-dot">
+              <span class="text text--timetable text--timetable-dot">&middot;</span>
+            </div>
+            <div class="row row--align-center">
+              <span class="text text--timetable">3:10<br>노호태의 답변</span>
+            </div>
+            <div class="row row--align-center row--timetable-dot">
+              <span class="text text--timetable text--timetable-dot">&middot;</span>
+            </div>
+            <div class="row row--align-center">
+              <span class="text text--timetable">4:00<br>김찬우의 답변</span>
+            </div>
+            <div class="row row--align-center row--timetable-dot">
+              <span class="text text--timetable text--timetable-dot">&middot;</span>
+            </div>
+            <div class="row row--align-center">
+              <span class="text text--timetable">4:40<br>윤민정의 답변</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--darker">
+        <div class="container">
+          <div class="container__inner" style="padding-top: calc(90px * var(--desktop-to-mobile-multiplier)); padding-bottom: calc(120px * var(--desktop-to-mobile-multiplier));">
+            <div class="row row--align-center" style="margin-bottom: calc(7px * var(--desktop-to-mobile-multiplier));">
+              <span class="text text--display text--display-sub">People Coming…</span>
+            </div>
+            <div class="row row--align-center" style="margin-bottom: calc(60px * var(--desktop-to-mobile-multiplier));">
+              <span class="text text--caption">(현재까지) 참석 예정인 사람들</span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">김준우</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">김지윤</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">김찬우</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub">와 주셔서 감사합니다 🥳</span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">김희준</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">노호태</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">서동민</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">손명균</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">안희종</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">윤민정</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">이병철</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist">정수영</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+            <div class="row row--align-start row--guestlist">
+              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist text--guestlist-sub">&middot;</span>
+              <span class="text text--guestlist text--guestlist-sub"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
+    <script>
+      new SiriWave({
+        container: document.getElementById("waveContainer"),
+        cover: true,
+        style: "ios9",
+        speed: 0.04,
+        curveDefinition: [
+          { color: "266, 181, 0" },
+          { color: "48, 48, 48" },
+          { color: "48, 48, 48" },
+        ],
+      })
+
+      const splashEl = document.getElementById('splash')
+      const darkenEl = document.getElementById('darken')
+      const updateStyles = () => {
+        const splashRect = splashEl.getBoundingClientRect()
+        const splashScrollProgress = (1 - (splashRect.top + splashRect.bottom) / window.innerHeight) / 2
+        if (!(splashScrollProgress < -1 && +splashEl.dataset.animationOffset === -1 || splashScrollProgress > 1 && +splashEl.dataset.animationOffset === 1)) {
+          const animationOffset = Math.min(Math.max(splashScrollProgress, -1), 1)
+          splashEl.dataset.animationOffset = animationOffset
+          Array.from(splashEl.children).forEach(el => {
+            el.style.transform = `translateY(${animationOffset * window.innerHeight * 2 / 7}px)`
+          })
+        }
+
+        const darkenRect = darkenEl.getBoundingClientRect()
+        const darkenScrollProgress = 2 - (darkenRect.top + darkenRect.bottom) / window.innerHeight
+        if (!(darkenScrollProgress < 0 && +darkenEl.dataset.animationOffset === 0 || darkenScrollProgress > 1 && +darkenEl.dataset.animationOffset === 1)) {
+          const animationOffset = Math.min(Math.max(darkenScrollProgress, 0), 1)
+          darkenEl.dataset.animationOffset = animationOffset
+          document.querySelectorAll('.section--dark, .section--darker').forEach(el => {
+            el.style.backgroundColor = `rgb(${Array(3).fill(48 - 19 * animationOffset).join(',')})`
+          })
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', updateStyles)
+      window.addEventListener('scroll', updateStyles)
+    </script>
+  </body>
+</html>
