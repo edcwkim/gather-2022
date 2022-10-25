@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block">
     <link rel="stylesheet" href="./css/colors.css">
     <title>The Anti-Anti Optimists Club</title>
     <style>
@@ -87,22 +87,25 @@
         margin-bottom: 7px;
       }
       .row--guestlist {
-        margin-top: calc(24px * var(--desktop-to-mobile-multiplier));
+        margin-bottom: calc(25px * var(--desktop-to-mobile-multiplier));
         display: flex;
         gap: calc(10px * var(--desktop-to-mobile-multiplier));
+      }
+      .row--guestlist:last-of-type {
+        margin-bottom: 0;
       }
 
       .text--display {
         line-height: calc(50px * var(--desktop-to-mobile-multiplier));
-        font-size: calc(43px * var(--desktop-to-mobile-multiplier));
+        font-size: calc(44px * var(--desktop-to-mobile-multiplier));
         font-weight: 400;
-        font-family: 'Sedgwick Ave', cursive;
-        letter-spacing: -0.006em;
+        font-family: 'Permanent Marker', cursive;
+        letter-spacing: -0.014em;
         color: var(--color-gray-800);
       }
       .text--display-sub {
         line-height: calc(45px * var(--desktop-to-mobile-multiplier));
-        font-size: calc(38px * var(--desktop-to-mobile-multiplier));
+        font-size: calc(39px * var(--desktop-to-mobile-multiplier));
         color: var(--color-gray-700);
       }
       .text--headline-en {
@@ -135,7 +138,7 @@
         text-decoration: none;
         font-size: 0.985em;
         font-weight: 550;
-        color: var(--color-chartreuse-1100);
+        color: var(--color-green-1000);
       }
       .text--link:hover {
         text-decoration: underline;
@@ -163,7 +166,7 @@
       .text--guestlist-sub {
         font-size: calc(20px * var(--desktop-to-mobile-multiplier));
         font-weight: 350;
-        color: var(--color-chartreuse-600);
+        color: var(--color-green-500);
       }
 
     </style>
@@ -191,13 +194,13 @@
             <div class="row row--align-center">
               <span class="text text--display">The Anti-Anti<br>Optimists Club</span>
             </div>
-            <div class="row row--align-start" style="margin-top: calc(85px * var(--desktop-to-mobile-multiplier));">
+            <div class="row row--align-start" style="margin-top: calc(80px * var(--desktop-to-mobile-multiplier));">
               <span class="text text--body">김찬우의 생일을 즈음하여 지인들과 소박한 컨퍼런스를 개최<wbr>합니다. 주제는 위의 Contrarian Question에 대한 네 발표자의 답변<wbr>입니다. 날짜는 <a class="text text--link" href="./event.ics">2022년 11월 6일, 일요일</a><wbr>이며, 메인 일정은 오후 2:15부터 5:30까지 진행<wbr>합니다. 그러면 바 <a class="text text--link" target="_blank" href="https://map.naver.com/v5/entry/place/31107953">테일 오브 테일스</a><wbr>에서 만날게요!</span>
             </div>
             <div class="row row--align-start" style="margin-top: calc(5px * var(--desktop-to-mobile-multiplier));">
               <span class="text text--caption">*선물은 가져오지 말아 주세요. 대신, 현장에서 자유롭게 행사 운영 비용을 기부하실 수 있습니다.</span>
             </div>
-            <div class="row row--align-center" style="margin-top: calc(95px * var(--desktop-to-mobile-multiplier)); margin-left: -1px;">
+            <div class="row row--align-center" style="margin-top: calc(90px * var(--desktop-to-mobile-multiplier)); margin-left: -1px;">
               <img src="./images/venue.png" width="100%" style="max-width: 62.5vh;">
             </div>
           </div>
@@ -205,8 +208,8 @@
       </section>
       <section id="darken" class="section section--darker">
         <div class="container">
-          <div class="container__inner" style="padding: calc(70px * var(--desktop-to-mobile-multiplier)) 0;">
-            <div class="row row--align-center" style="margin-bottom: calc(70px * var(--desktop-to-mobile-multiplier));">
+          <div class="container__inner" style="padding: calc(50px * var(--desktop-to-mobile-multiplier)) 0;">
+            <div class="row row--align-center" style="margin-bottom: calc(60px * var(--desktop-to-mobile-multiplier));">
               <span class="text text--display text--display-sub">Timetable</span>
             </div>
             <div class="row row--align-center">
@@ -241,12 +244,9 @@
       </section>
       <section class="section section--darker">
         <div class="container">
-          <div class="container__inner" style="padding-top: calc(100px * var(--desktop-to-mobile-multiplier)); padding-bottom: calc(120px * var(--desktop-to-mobile-multiplier));">
-            <div class="row row--align-center" style="margin-bottom: calc(7px * var(--desktop-to-mobile-multiplier));">
-              <span class="text text--display text--display-sub">People coming…</span>
-            </div>
-            <div class="row row--align-center" style="margin-bottom: calc(60px * var(--desktop-to-mobile-multiplier));">
-              <span class="text text--caption">(현재까지) 참석 예정인 사람들</span>
+          <div class="container__inner" style="padding-top: calc(90px * var(--desktop-to-mobile-multiplier)); padding-bottom: calc(120px * var(--desktop-to-mobile-multiplier));">
+            <div class="row row--align-center" style="margin-bottom: calc(75px * var(--desktop-to-mobile-multiplier));">
+              <span class="text text--display text--display-sub">Coming Guests</span>
             </div>
             <div class="row row--align-start row--guestlist">
               <span class="text text--guestlist">김준우</span>
@@ -460,7 +460,7 @@
         style: "ios9",
         speed: 0.04,
         curveDefinition: [
-          { color: "170, 216, 22" },
+          { color: "75, 205, 149" },
           { color: "48, 48, 48" },
           { color: "48, 48, 48" },
         ],
