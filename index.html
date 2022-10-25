@@ -32,6 +32,9 @@
       :root {
         --desktop-to-mobile-multiplier: 1;
         --mobile-to-desktop-multiplier: 9 / 8;
+        --color-primary: var(--color-green-900);
+        --color-dark: var(--color-gray-200);
+        --color-darker: var(--color-gray-100);
         --wave-amplitude: 108px;
       }
       @media (max-width: 768px) {
@@ -51,11 +54,11 @@
       }
 
       .section--dark {
-        background-color: var(--color-gray-200);
+        background-color: var(--color-dark);
         color: var(--color-gray-800);
       }
       .section--darker {
-        background-color: var(--color-gray-100);
+        background-color: var(--color-darker);
         color: var(--color-gray-800);
       }
 
@@ -138,7 +141,7 @@
         text-decoration: none;
         font-size: 0.985em;
         font-weight: 550;
-        color: var(--color-green-900);
+        color: var(--color-primary);
       }
       .text--link:hover {
         text-decoration: underline;
@@ -166,8 +169,8 @@
       .text--guestlist-sub {
         font-size: calc(20px * var(--desktop-to-mobile-multiplier));
         font-weight: 350;
-        color: var(--color-green-900);
-        opacity: 0.53;
+        color: var(--color-primary);
+        opacity: 0.54;
       }
 
     </style>
@@ -453,17 +456,21 @@
         </div>
       </section>
     </main>
-    <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/siriwave@2.3.0/dist/siriwave.umd.min.js" integrity="sha256-3nuCkfua70yzdRDCr9DzTbcS/qY/DYcnNI3/iRridDY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.4.2/chroma-light.min.js" integrity="sha256-JCldSKx3AZL7ouqyCZPuf55qpw3LnQQJ0qKmDxE1VQQ=" crossorigin="anonymous"></script>
     <script>
+      const colorPrimary = chroma(getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim())
+      const colorDark = chroma(getComputedStyle(document.documentElement).getPropertyValue('--color-dark').trim())
+      const colorDarker = chroma(getComputedStyle(document.documentElement).getPropertyValue('--color-darker').trim())
       new SiriWave({
         container: document.getElementById("waveContainer"),
         cover: true,
         style: "ios9",
         speed: 0.04,
         curveDefinition: [
-          { color: "52, 187, 132" },
-          { color: "48, 48, 48" },
-          { color: "48, 48, 48" },
+          { color: colorPrimary.rgb().join(',') },
+          { color: colorDark.rgb().join(',') },
+          { color: colorDark.rgb().join(',') },
         ],
       })
 
@@ -486,7 +493,7 @@
           const animationOffset = Math.min(Math.max(darkenScrollProgress, 0), 1)
           darkenEl.dataset.animationOffset = animationOffset
           document.querySelectorAll('.section--dark, .section--darker').forEach(el => {
-            el.style.backgroundColor = `rgb(${Array(3).fill(48 - 19 * animationOffset).join(',')})`
+            el.style.backgroundColor = chroma.mix(colorDark, colorDarker, animationOffset).css()
           })
         }
       }
