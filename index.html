@@ -66,10 +66,12 @@
       .section--dark {
         background-color: var(--color-dark);
         color: var(--color-gray-800);
+        will-change: background-color;
       }
       .section--darker {
         background-color: var(--color-darker);
         color: var(--color-gray-700);
+        will-change: background-color;
       }
 
       .container {
@@ -163,6 +165,8 @@
       @media (hover: hover) {
         .text--link {
           opacity: 0.75;
+          transition: opacity 250ms ease;
+          will-change: opacity;
         }
         .text--link:hover {
           opacity: 1;
@@ -201,7 +205,7 @@
   </head>
   <body>
     <main>
-      <section id="splash" style="position: relative; z-index: -1;">
+      <section id="splash" style="position: relative; z-index: -1; will-change: transform;">
         <div class="container">
           <div class="container__inner" style="padding-top: var(--wave-amplitude); padding-bottom: calc(var(--wave-amplitude) + 30px);">
             <div class="row row--align-start">
