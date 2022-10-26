@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;1,300&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="./css/colors.css">
-    <title>The Anti-Anti Optimists Club</title>
+    <title>Wandering Yet Visioning</title>
     <style>
 
       /* reboot */
@@ -26,13 +27,17 @@
       body {
         margin: 0;
         word-break: keep-all;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
       }
 
       /* custom */
       :root {
         --desktop-to-mobile-multiplier: 1;
         --mobile-to-desktop-multiplier: 9 / 8;
-        --color-primary: var(--color-chartreuse-900);
+        --font-family-display: 'IBM Plex Serif', serif;
+        --font-family-default: 'IBM Plex Sans', sans-serif;
+        --color-primary: var(--color-green-1000);
         --color-dark: var(--color-gray-200);
         --color-darker: var(--color-gray-100);
         --wave-amplitude: 108px;
@@ -45,11 +50,8 @@
       }
 
       html {
-        background-color: var(--color-gray-900);
-      }
-      body {
         line-height: 1;
-        font-family: system-ui;
+        background-color: var(--color-gray-900);
         color: var(--color-gray-100);
       }
 
@@ -98,18 +100,24 @@
         margin-bottom: 0;
       }
 
+      .text {
+        font-family: var(--font-family-default);
+      }
       .text--display {
-        line-height: calc(50px * var(--desktop-to-mobile-multiplier));
-        font-size: calc(44px * var(--desktop-to-mobile-multiplier));
-        font-weight: 400;
-        font-family: 'Permanent Marker', cursive;
-        letter-spacing: -0.014em;
+        line-height: calc(51px * var(--desktop-to-mobile-multiplier));
+        font-size: calc(45px * var(--desktop-to-mobile-multiplier));
+        font-weight: 300;
+        font-family: var(--font-family-display);
+        letter-spacing: -0.016em;
         color: var(--color-gray-800);
       }
       .text--display-sub {
-        line-height: calc(45px * var(--desktop-to-mobile-multiplier));
-        font-size: calc(39px * var(--desktop-to-mobile-multiplier));
+        line-height: calc(44px * var(--desktop-to-mobile-multiplier));
+        font-size: calc(38px * var(--desktop-to-mobile-multiplier));
         color: var(--color-gray-700);
+      }
+      .text--headline {
+        font-family: system-ui;
       }
       .text--headline-en {
         line-height: calc(23px * var(--mobile-to-desktop-multiplier));
@@ -121,36 +129,37 @@
         line-height: calc(24px * var(--mobile-to-desktop-multiplier));
         font-size: calc(17px * var(--mobile-to-desktop-multiplier));
         font-weight: 700;
-        letter-spacing: -0.018em;
+        letter-spacing: -0.022em;
         opacity: 0.3;
       }
       .text--body {
         line-height: calc(32px * var(--desktop-to-mobile-multiplier));
         font-size: calc(19px * var(--desktop-to-mobile-multiplier));
-        font-weight: 350;
-        letter-spacing: -0.01em;
+        font-weight: 400;
+        letter-spacing: -0.012em;
       }
       .text--caption {
         line-height: 25px;
         font-size: 15px;
-        font-weight: 350;
+        font-weight: 400;
         letter-spacing: -0.022em;
         opacity: 0.4;
       }
       .text--link {
         text-decoration: none;
-        font-size: 0.985em;
-        font-weight: 550;
+        font-size: 0.99em;
+        font-weight: 700;
         color: var(--color-primary);
+        opacity: 0.75;
       }
       .text--link:hover {
-        text-decoration: underline;
+        opacity: 1;
       }
       .text--timetable {
         line-height: 32px;
         font-size: 17px;
-        font-weight: 350;
-        letter-spacing: -0.012em;
+        font-weight: 500;
+        letter-spacing: -0.014em;
       }
       .text--timetable-dot {
         opacity: 0.3;
@@ -163,12 +172,13 @@
         color: var(--color-gray-700);
       }
       .text--guestlist-dot {
-        font-weight: 350;
+        font-weight: 400;
         opacity: 0.36;
       }
       .text--guestlist-sub {
         font-size: calc(20px * var(--desktop-to-mobile-multiplier));
-        font-weight: 350;
+        font-weight: 400;
+        letter-spacing: -0.016em;
         color: var(--color-primary);
         opacity: 0.54;
       }
@@ -181,10 +191,10 @@
         <div class="container">
           <div class="container__inner" style="padding-top: var(--wave-amplitude); padding-bottom: calc(var(--wave-amplitude) + 30px);">
             <div class="row row--align-start">
-              <span class="text text--headline-en">What is one important truth<br>very few people would agree with you on?</span>
+              <span class="text text--headline text--headline-en">What is one important truth<br>very few people would agree with you on?</span>
             </div>
             <div class="row row--align-start" style="margin-top: calc(2px * var(--mobile-to-desktop-multiplier));">
-              <span class="text text--headline-ko">당신이 믿고 있는, 그중<wbr>에서도 아주 적은 사람이<br>동의할 만한 진실이 있나요?</span>
+              <span class="text text--headline text--headline-ko">당신이 믿고 있는, 그중<wbr>에서도 아주 적은 사람이<br>동의할 만한 진실이 있나요?</span>
             </div>
           </div>
         </div>
@@ -194,12 +204,12 @@
       </section>
       <section class="section section--dark">
         <div class="container">
-          <div class="container__inner" style="padding-top: calc(var(--wave-amplitude) + 30px); padding-bottom: var(--wave-amplitude);">
-            <div class="row row--align-center">
-              <span class="text text--display">The Anti-Anti<br>Optimists Club</span>
+          <div class="container__inner" style="padding-top: calc(var(--wave-amplitude) + 50px * var(--desktop-to-mobile-multiplier)); padding-bottom: var(--wave-amplitude);">
+            <div class="row row--align-center" style="margin-left: -10px;">
+              <span class="text text--display">Wandering <i style="margin-right: -5px;">Yet</i><br>Visioning</span>
             </div>
             <div class="row row--align-start" style="margin-top: calc(80px * var(--desktop-to-mobile-multiplier));">
-              <span class="text text--body">김찬우의 2022년 생일을 즈음하여 지인들과 소박한 컨퍼런스를 개최<wbr>합니다. 주제는 위의 Contrarian Question에 관한 네 발표자 나름대로의 답변<wbr>입니다. 날짜는 <a class="text text--link" href="./event.ics">11월 6일, 일요일</a><wbr>이며, 메인 일정은 오후 2:15부터 5:30까지 진행<wbr>됩니다. 그러면 바 <a class="text text--link" target="_blank" href="https://map.naver.com/v5/entry/place/31107953">테일 오브 테일스</a><wbr>에 모여 봅시다!</span>
+              <span class="text text--body">김찬우의 2022년 생일을 즈음하여 지인들과 소박한 컨퍼런스를 준비<wbr>했습니다. 주제는 위에서 제시한 Contrarian Question입니다. 컨퍼런스의 제목에 어울릴 만한 4인의 발표자들이 나름대로의 대답을 들려줄 예정입니다. 날짜는 <a class="text text--link" href="./event.ics">11월 6일, 일요일</a><wbr>이며, 메인 일정은 오후 2:15부터 5:30까지 진행<wbr>됩니다. 그러면 바 <a class="text text--link" target="_blank" href="https://map.naver.com/v5/entry/place/31107953">테일 오브 테일스</a><wbr>에 모여 봅시다!</span>
             </div>
             <div class="row row--align-start" style="margin-top: calc(5px * var(--desktop-to-mobile-multiplier));">
               <span class="text text--caption">*선물은 가져오지 말아 주세요. 대신, 현장에서 자유롭게 행사 운영 비용에 기여하실 수 있습니다.</span>
@@ -212,7 +222,7 @@
       </section>
       <section id="darken" class="section section--darker">
         <div class="container">
-          <div class="container__inner" style="padding: calc(50px * var(--desktop-to-mobile-multiplier)) 0;">
+          <div class="container__inner" style="padding: calc(100px * var(--desktop-to-mobile-multiplier)) 0;">
             <div class="row row--align-center" style="margin-bottom: calc(60px * var(--desktop-to-mobile-multiplier));">
               <span class="text text--display text--display-sub">Timetable</span>
             </div>
@@ -248,7 +258,7 @@
       </section>
       <section class="section section--darker">
         <div class="container">
-          <div class="container__inner" style="padding-top: calc(90px * var(--desktop-to-mobile-multiplier)); padding-bottom: calc(120px * var(--desktop-to-mobile-multiplier));">
+          <div class="container__inner" style="padding-top: calc(100px * var(--desktop-to-mobile-multiplier)); padding-bottom: calc(120px * var(--desktop-to-mobile-multiplier));">
             <div class="row row--align-center" style="margin-bottom: calc(75px * var(--desktop-to-mobile-multiplier));">
               <span class="text text--display text--display-sub">Coming Guests…</span>
             </div>
