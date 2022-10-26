@@ -351,9 +351,9 @@
               <span class="text text--guestlist text--guestlist-sub">엉망으로살아야돼요</span>
             </div>
             <div class="row row--align-start row--guestlist">
-              <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
+              <span class="text text--guestlist">하규원</span>
               <span class="text text--guestlist text--guestlist-dot">&middot;</span>
-              <span class="text text--guestlist text--guestlist-sub"></span>
+              <span class="text text--guestlist text--guestlist-sub">내 존재의 본체는 가루라는 생각으로 지내고 있습니다.</span>
             </div>
             <div class="row row--align-start row--guestlist">
               <span class="text text--guestlist text--guestlist-dimmed">✉️</span>
@@ -487,13 +487,14 @@
     <script src="https://cdn.jsdelivr.net/npm/siriwave@2.3.0/dist/siriwave.umd.min.js" integrity="sha256-3nuCkfua70yzdRDCr9DzTbcS/qY/DYcnNI3/iRridDY=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.4.2/chroma-light.min.js" integrity="sha256-JCldSKx3AZL7ouqyCZPuf55qpw3LnQQJ0qKmDxE1VQQ=" crossorigin="anonymous"></script>
     <script>
-      const colorPrimary = chroma(getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim())
-      const colorDark = chroma(getComputedStyle(document.documentElement).getPropertyValue('--color-dark').trim())
-      const colorDarker = chroma(getComputedStyle(document.documentElement).getPropertyValue('--color-darker').trim())
+      const documentStyle = getComputedStyle(document.documentElement)
+      const colorPrimary = chroma(documentStyle.getPropertyValue('--color-primary').trim())
+      const colorDark = chroma(documentStyle.getPropertyValue('--color-dark').trim())
+      const colorDarker = chroma(documentStyle.getPropertyValue('--color-darker').trim())
       new SiriWave({
-        container: document.getElementById("waveContainer"),
+        container: document.getElementById('waveContainer'),
         cover: true,
-        style: "ios9",
+        style: 'ios9',
         speed: 0.04,
         curveDefinition: [
           { color: colorPrimary.rgb().join(',') },
