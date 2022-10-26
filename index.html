@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;1,300&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,200;1,200&display=block">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="./css/colors.css">
+    <link rel="stylesheet" href="./css/colors-new.css">
     <title>Wandering Yet Visioning</title>
     <style>
 
@@ -37,9 +37,9 @@
         --mobile-to-desktop-multiplier: 9 / 8;
         --font-family-display: 'IBM Plex Serif', serif;
         --font-family-default: 'IBM Plex Sans', sans-serif;
-        --color-primary: var(--color-green-1000);
-        --color-dark: var(--color-gray-200);
-        --color-darker: var(--color-gray-100);
+        --color-primary: var(--color-cyan-900);
+        --color-dark: var(--color-gray-100);
+        --color-darker: var(--color-gray-50);
         --wave-amplitude: 108px;
       }
       @media (max-width: 768px) {
@@ -61,7 +61,7 @@
       }
       .section--darker {
         background-color: var(--color-darker);
-        color: var(--color-gray-800);
+        color: var(--color-gray-700);
       }
 
       .container {
@@ -106,18 +106,19 @@
       .text--display {
         line-height: calc(51px * var(--desktop-to-mobile-multiplier));
         font-size: calc(45px * var(--desktop-to-mobile-multiplier));
-        font-weight: 300;
+        font-weight: 200;
         font-family: var(--font-family-display);
         letter-spacing: -0.016em;
-        color: var(--color-gray-800);
+        color: var(--color-gray-900);
       }
       .text--display-sub {
         line-height: calc(44px * var(--desktop-to-mobile-multiplier));
         font-size: calc(38px * var(--desktop-to-mobile-multiplier));
-        color: var(--color-gray-700);
+        color: var(--color-gray-800);
       }
       .text--headline {
         font-family: system-ui;
+        color: var(--color-gray-75);
       }
       .text--headline-en {
         line-height: calc(23px * var(--mobile-to-desktop-multiplier));
@@ -129,7 +130,7 @@
         line-height: calc(24px * var(--mobile-to-desktop-multiplier));
         font-size: calc(17px * var(--mobile-to-desktop-multiplier));
         font-weight: 700;
-        letter-spacing: -0.022em;
+        letter-spacing: -0.02em;
         opacity: 0.3;
       }
       .text--body {
@@ -150,10 +151,14 @@
         font-size: 0.99em;
         font-weight: 700;
         color: var(--color-primary);
-        opacity: 0.75;
       }
-      .text--link:hover {
-        opacity: 1;
+      @media (hover: hover) {
+        .text--link {
+          opacity: 0.75;
+        }
+        .text--link:hover {
+          opacity: 1;
+        }
       }
       .text--timetable {
         line-height: 32px;
@@ -169,7 +174,6 @@
         font-size: calc(22px * var(--desktop-to-mobile-multiplier));
         font-weight: 700;
         letter-spacing: -0.016em;
-        color: var(--color-gray-700);
       }
       .text--guestlist-dot {
         font-weight: 400;
@@ -209,7 +213,7 @@
               <span class="text text--display">Wandering <i style="margin-right: -5px;">Yet</i><br>Visioning</span>
             </div>
             <div class="row row--align-start" style="margin-top: calc(80px * var(--desktop-to-mobile-multiplier));">
-              <span class="text text--body">김찬우의 2022년 생일을 즈음하여 지인들과 소박한 컨퍼런스를 준비<wbr>했습니다. 주제는 위에서 제시한 Contrarian Question입니다. 컨퍼런스의 제목에 어울릴 만한 4인의 발표자들이 나름대로의 대답을 들려줄 예정입니다. 날짜는 <a class="text text--link" href="./event.ics">11월 6일, 일요일</a><wbr>이며, 메인 일정은 오후 2:15부터 5:30까지 진행<wbr>됩니다. 그러면 바 <a class="text text--link" target="_blank" href="https://map.naver.com/v5/entry/place/31107953">테일 오브 테일스</a><wbr>에 모여 봅시다!</span>
+              <span class="text text--body">김찬우의 2022년 생일을 즈음하여 지인들과 소박한 컨퍼런스를 개최<wbr>합니다. 주제는 위에서 제시한 Contrarian Question입니다. 컨퍼런스 제목에 어울릴 법한 4인의 발표자<wbr>들이 각자 고민한 나름대로의 대답을 들려줄 예정입니다. 날짜는 <a class="text text--link" href="./event.ics">11월 6일, 일요일</a><wbr>이며, 메인 일정은 오후 2:15부터 5:30까지 진행<wbr>됩니다. 그러면 바 <a class="text text--link" target="_blank" href="https://map.naver.com/v5/entry/place/31107953">테일 오브 테일스</a><wbr>에 모여 보아요!</span>
             </div>
             <div class="row row--align-start" style="margin-top: calc(5px * var(--desktop-to-mobile-multiplier));">
               <span class="text text--caption">*선물은 가져오지 말아 주세요. 대신, 현장에서 자유롭게 행사 운영 비용에 기여하실 수 있습니다.</span>
@@ -258,7 +262,7 @@
       </section>
       <section class="section section--darker">
         <div class="container">
-          <div class="container__inner" style="padding-top: calc(100px * var(--desktop-to-mobile-multiplier)); padding-bottom: calc(120px * var(--desktop-to-mobile-multiplier));">
+          <div class="container__inner" style="padding-top: calc(90px * var(--desktop-to-mobile-multiplier)); padding-bottom: calc(120px * var(--desktop-to-mobile-multiplier));">
             <div class="row row--align-center" style="margin-bottom: calc(75px * var(--desktop-to-mobile-multiplier));">
               <span class="text text--display text--display-sub">Coming Guests…</span>
             </div>
