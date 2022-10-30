@@ -87,6 +87,9 @@
         justify-content: center;
       }
 
+      .row--will-transform {
+        will-change: transform;
+      }
       .row--align-start {
         text-align: start;
         padding-right: 18px;
@@ -205,20 +208,20 @@
   </head>
   <body>
     <main>
-      <section id="splash" style="position: relative; z-index: -1;">
-        <div class="container" style="will-change: transform;">
-          <div class="container__inner" style="padding-top: var(--wave-amplitude); padding-bottom: calc(var(--wave-amplitude) + 30px);">
-            <div class="row row--align-start">
+      <section id="splash" class="section">
+        <div class="container">
+          <div class="container__inner" style="padding-top: var(--wave-amplitude); padding-bottom: calc(var(--wave-amplitude) + 30px * var(--mobile-to-desktop-multiplier));">
+            <div class="row row--align-start row--will-transform">
               <span class="text text--headline text--headline-en">What is one important truth<br>very few people would agree with you on?</span>
             </div>
-            <div class="row row--align-start" style="margin-top: calc(2px * var(--mobile-to-desktop-multiplier));">
+            <div class="row row--align-start row--will-transform" style="margin-top: calc(2px * var(--mobile-to-desktop-multiplier));">
               <span class="text text--headline text--headline-ko">당신이 믿고 있는, 그중<wbr>에서도 아주 적은 사람이<br>동의할 만한 진실이 있나요?</span>
             </div>
           </div>
         </div>
       </section>
-      <section style="position: relative; overflow: hidden; height: calc(var(--wave-amplitude) * 2); margin-top: calc(var(--wave-amplitude) * -1); margin-bottom: calc(var(--wave-amplitude) * -1);">
-        <div id="waveContainer" style="position: relative; left: -25%; top: 2.8px; width: 150%; height: 100%;"></div>
+      <section style="position: relative; z-index: 1; overflow: hidden; height: calc(var(--wave-amplitude) * 2); margin: calc(var(--wave-amplitude) * -1) 0;">
+        <div id="waveContainer" style="position: relative; top: 2.8px; left: -25%; width: 150%; height: 100%;"></div>
       </section>
       <section class="section section--dark">
         <div class="container">
@@ -491,7 +494,7 @@
         if (!(splashScrollProgress < -1 && +splashEl.dataset.animationOffset === -1 || splashScrollProgress > 1 && +splashEl.dataset.animationOffset === 1)) {
           const animationOffset = Math.min(Math.max(splashScrollProgress, -1), 1)
           splashEl.dataset.animationOffset = animationOffset
-          Array.from(splashEl.children).forEach(el => {
+          splashEl.querySelectorAll('.row--will-transform').forEach(el => {
             el.style.transform = `translateY(${animationOffset * window.innerHeight * 2 / 7}px)`
           })
         }
