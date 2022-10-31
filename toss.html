@@ -11,6 +11,7 @@
     <meta property="og:image" content="https://wandering.edcx.io/images/og.png">
     <meta property="og:image:width" content="1260">
     <meta property="og:image:height" content="660">
+    <link rel="stylesheet" href="https://assets-fe.toss.im/tds/style.css">
   </head>
   <style>
 
@@ -38,6 +39,7 @@
     html {
       position: relative;
       overflow: hidden;
+      background-color: var(--adaptiveBackground);
     }
 
     main {
@@ -55,9 +57,7 @@
       <iframe id="toss" src="https://toss.me/edcwkim?section=transaction" width="100%" height="100%" scrolling="no"></iframe>
     </main>
     <script>
-      setTimeout(() => {
-        document.getElementById('toss').contentWindow.location.reload()
-      }, 60 * 1000)
+      setTimeout(() => location.reload(), 60 * 1000)
     </script>
   </body>
 </html>
