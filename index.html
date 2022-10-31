@@ -486,6 +486,14 @@
         ],
       })
 
+      if (Math.random() < 0.5) {
+        const guestElList = Array.from(document.querySelectorAll('.row--guestlist'))
+        const guestElIsFilled = el => !el.firstElementChild.classList.contains('text--guestlist-dimmed')
+        const appendEl = el => el.parentNode.appendChild(el)
+        guestElList.filter(guestElIsFilled).reverse().map(appendEl)
+        guestElList.filter(el => !guestElIsFilled(el)).map(appendEl)
+      }
+
       const splashEl = document.getElementById('splash')
       const darkenEl = document.getElementById('darken')
       const updateStyles = () => {
@@ -510,7 +518,7 @@
         }
       }
 
-      document.addEventListener('DOMContentLoaded', updateStyles)
+      window.addEventListener('load', updateStyles)
       window.addEventListener('scroll', updateStyles)
     </script>
   </body>
