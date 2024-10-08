@@ -76,16 +76,22 @@
       }
 
       .container {
-        min-height: 100svh;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
       }
+      .container--fixed-height {
+        min-height: 100svh;
+      }
       .container__inner {
         flex-grow: 1;
-        max-width: 100svh;
+        max-width: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
+      }
+      .container--fixed-height .container__inner {
+        max-width: 100svh;
       }
 
       .row--will-transform {
@@ -210,7 +216,7 @@
   <body>
     <main>
       <section id="splash" class="section">
-        <div class="container">
+        <div class="container container--fixed-height">
           <div class="container__inner" style="padding-top: var(--wave-amplitude); padding-bottom: calc(var(--wave-amplitude) + 10px * var(--mobile-to-desktop-multiplier));">
             <div class="row row--align-start row--will-transform">
               <span class="text text--headline text--headline-en">What is one important truth<br>very few people would agree with you on?</span>
@@ -237,7 +243,7 @@
               <span class="text text--caption">*선물은 준비해 오지 말아 주세요. 대신, 현장에서 자유롭게 행사 운영 비용에 기여하실 수 있습니다.</span>
             </div>
             <div class="row row--align-center" style="margin-top: calc(90px * var(--desktop-to-mobile-multiplier)); margin-left: -1px;">
-              <img src="./images/venue.png" width="100%" style="max-width: 62.5svh;">
+              <img src="./images/venue.png" width="100%" style="max-width: 62.5vh;">
             </div>
           </div>
         </div>
