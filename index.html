@@ -76,21 +76,21 @@
       }
 
       .container {
-        min-height: 100vh;
+        min-height: 100lvh;
         display: flex;
         justify-content: center;
       }
-      .container--fixed-height {
+      .container--initial-viewport {
         min-height: 100svh;
       }
       .container__inner {
         flex-grow: 1;
-        max-width: 100vh;
+        max-width: 100lvh;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
-      .container--fixed-height .container__inner {
+      .container--initial-viewport .container__inner {
         max-width: 100svh;
       }
 
@@ -216,7 +216,7 @@
   <body>
     <main>
       <section id="splash" class="section">
-        <div class="container container--fixed-height">
+        <div class="container container--initial-viewport">
           <div class="container__inner" style="padding-top: var(--wave-amplitude); padding-bottom: calc(var(--wave-amplitude) + 10px * var(--mobile-to-desktop-multiplier));">
             <div class="row row--align-start row--will-transform">
               <span class="text text--headline text--headline-en">What is one important truth<br>very few people would agree with you on?</span>
