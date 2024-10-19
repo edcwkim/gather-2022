@@ -508,6 +508,14 @@
 
       window.addEventListener('load', updateStyles)
       window.addEventListener('scroll', updateStyles)
+
+      const containerElList = document.querySelectorAll('.container')
+      window.addEventListener('load', () => {
+        containerElList.forEach(el => {
+          const style = window.getComputedStyle(el)
+          el.style.minHeight = style.minHeight
+        })
+      })
     </script>
   </body>
 </html>
