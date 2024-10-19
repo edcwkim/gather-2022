@@ -482,6 +482,14 @@
         guestElList.filter(el => !guestElIsFilled(el)).map(appendEl)
       }
 
+      const containerElList = document.querySelectorAll('.container')
+      window.addEventListener('load', () => {
+        containerElList.forEach(el => {
+          const style = window.getComputedStyle(el)
+          el.style.minHeight = style.minHeight
+        })
+      })
+
       const splashEl = document.getElementById('splash')
       const darkenEl = document.getElementById('darken')
       const updateStyles = () => {
@@ -508,14 +516,6 @@
 
       window.addEventListener('load', updateStyles)
       window.addEventListener('scroll', updateStyles)
-
-      const containerElList = document.querySelectorAll('.container')
-      window.addEventListener('load', () => {
-        containerElList.forEach(el => {
-          const style = window.getComputedStyle(el)
-          el.style.minHeight = style.minHeight
-        })
-      })
     </script>
   </body>
 </html>
